@@ -4,7 +4,12 @@
   angular.module('myApp',[])
 
   .controller('UController', UController);
+  
+//protection against minification
+ //angular.module('myApp',[])
 
+ //.controller('UController', ['$scope','$filter',UController]);
+  UController.$inject =['$scope','$filter'];
   function UController($scope,$filter){
     $scope.name = "";
     $scope.counter = 0;
